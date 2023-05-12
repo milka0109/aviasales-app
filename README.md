@@ -1,3 +1,3 @@
 ﻿# aviasales-app
  
-Vercel link: aviasales-app-milka0109.vercel.app
+Vercel link: https://aviasales-app-milka0109.vercel.app/
