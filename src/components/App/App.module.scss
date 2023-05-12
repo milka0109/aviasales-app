@@ -1,0 +1,60 @@
+
+.container {
+  max-width: 1160px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0 8%; // проба
+  @media screen and (max-width: 880px){
+    padding: 0;
+    width: 360px;
+  }
+}
+
+.header {
+  padding: 40px 0;
+  &--logo {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 2%;
+}
+
+.core {
+  max-width: 502px;
+  width: 100%;
+  @media screen and (max-width: 880px){
+    margin: 0 auto;
+  }
+}
+
+.show-more-btn {
+  height: 50px;
+  width: 100%;
+  background: rgba(33, 150, 243, 1);
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 30px;
+//  text
+  font-weight: 600;
+  font-size: 12px;
+  text-align: center;
+  vertical-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  &:hover {
+    cursor: pointer;
+    background: rgba(33, 150, 243, 0.8);
+  }
+  &:focus {
+    background: rgba(33, 150, 243, 0.8);
+    outline: none;
+  }
+}

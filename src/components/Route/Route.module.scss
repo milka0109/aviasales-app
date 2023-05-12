@@ -1,0 +1,23 @@
+.route {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+  &--flight, &--time, &--stops {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 141px;
+  }
+}
+
+.text {
+  font-weight: 600;
+  font-size: 14px;
+  color: #4A4A4A;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #A0B0B9;
+}

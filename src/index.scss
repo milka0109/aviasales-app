@@ -1,0 +1,38 @@
+$container-bg: #F3F7FA;
+
+@font-face {
+  // REGULAR font-weight 300
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-Regular.eot');
+  src: url('fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+  url('fonts/OpenSans-Regular.woff') format('woff'),
+  url('fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  // SEMIBOLD font-weight 600
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-SemiBold.eot');
+  src: url('fonts/OpenSans-SemiBold.eot?#iefix') format('embedded-opentype'),
+  url('fonts/OpenSans-SemiBold.woff') format('woff'),
+  url('fonts/OpenSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: $container-bg;
+  overflow-y: scroll;
+}
