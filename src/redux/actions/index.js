@@ -6,11 +6,13 @@ export const SET_VISIBLE_TICKETS = 'SHOW_MORE_TICKETS';
 export const SET_SORT_TAB = 'SET_SORT_TAB';
 export const SET_LOADING = 'SET_LOADING';
 export const SET_SORTED_QUANTITY = 'SET_VISIBLE_QUANTITY';
+export const SET_ERROR_STATUS = 'SET_ERROR_STATUS';
 
 export const setFilter = (stopsId) => ({ type: SET_FILTER, payload: stopsId });
 export const setVisibleTickets = () => ({ type: SET_VISIBLE_TICKETS });
 export const setSortTab = (tabId) => ({ type: SET_SORT_TAB, payload: tabId });
 export const setSortedQuantity = (quantity) => ({ type: SET_SORTED_QUANTITY, payload: quantity });
+export const setErrorStatus = (error) => ({ type: SET_ERROR_STATUS, payload: error });
 
 const aviasalesService = new AviasalesService();
 
@@ -32,7 +34,7 @@ export const getTickets = () => async (dispatch) => {
     if (e.message === 'Код ошибки 500') {
       dispatch(getTickets());
     } else {
-      throw new Error(e);
+      dispatch(setErrorStatus({ active: true, message: `${e.message}` }));
     }
   }
 };

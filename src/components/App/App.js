@@ -1,20 +1,19 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Alert } from 'antd';
 
 import { setVisibleTickets } from '../../redux/actions';
 import { Filter } from '../Filter';
 import { SortTabs } from '../SortTabs';
 import { CardList } from '../CardList';
 import { Loader } from '../Loader';
-import { Info } from '../Info';
+import logo from '../../assets/img/logo.png';
 
 import classes from './App.module.scss';
-import logo from './img/logo.png';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const { loading, visibleTickets, sortedQuantity } = useSelector((state) => state);
-  const areAllVisible = visibleTickets === sortedQuantity;
+  const { loading, error } = useSelector((state) => state);
 
   return (
     <div className={classes.container}>
@@ -25,16 +24,23 @@ export const App = () => {
         <Filter />
         <section className={classes.core}>
           <SortTabs />
-          {loading ? <Loader /> : null}
-          {!sortedQuantity && !loading ? <Info /> : null}
-          <div>
-            <CardList />
-          </div>
-          {!areAllVisible && !!sortedQuantity ? (
-            <button type="button" className={classes['show-more-btn']} onClick={() => dispatch(setVisibleTickets())}>
-              Показать еще 5 билетов!
-            </button>
-          ) : null}
+          {loading && !error.active ? <Loader /> : null}
+          {error.active ? (
+            <Alert
+              message="Error:"
+              description={error.message}
+              type="error"
+              showIcon
+              className={classes['alert-error']}
+            />
+          ) : (
+            <div>
+              <CardList />
+            </div>
+          )}
+          <button type="button" className={classes['show-more-btn']} onClick={() => dispatch(setVisibleTickets())}>
+            Показать еще 5 билетов!
+          </button>
         </section>
       </main>
     </div>

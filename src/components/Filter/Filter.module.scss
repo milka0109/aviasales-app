@@ -38,7 +38,7 @@
     appearance: none;
     &:checked + .filter--box {
       border-color: #2196F3;
-      background: url("./img/checked.svg") center center no-repeat;
+      background: url("../../assets/img/checked.svg") center center no-repeat;
     }
   }
   &--box{
